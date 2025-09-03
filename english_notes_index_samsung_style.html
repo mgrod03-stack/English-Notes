@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Notes</title>
+  <meta name="description" content="English Notes – Apuntes y ejercicios de inglés" />
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --panel:#12151c;
+      --panel-2:#171b23;
+      --text:#e9eef5;
+      --muted:#a9b3c5;
+      --line:#242b36;
+      --accent:#00a8ff;
+      --accent-2:#4cc3ff;
+      --shadow:0 8px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% -10%, rgba(0,168,255,.15), transparent 40%),
+        radial-gradient(900px 500px at 85% -20%, rgba(76,195,255,.12), transparent 45%),
+        linear-gradient(180deg, #0a0c11 0%, #0b0d12 40%, #0b0d12 100%);
+    }
+    header{position:sticky;top:0;background:rgba(11,13,18,.65);border-bottom:1px solid var(--line);backdrop-filter:saturate(160%) blur(10px)}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .nav{display:flex;align-items:center;gap:14px}
+    .logo{width:36px;height:36px;border-radius:12px;background:radial-gradient(circle at 35% 35%, var(--accent), transparent 42%),radial-gradient(circle at 70% 60%, var(--accent-2), transparent 50%),linear-gradient(200deg,#0e1118,#12151c);box-shadow:inset 0 0 40px rgba(0,168,255,.35),0 8px 24px rgba(0,0,0,.25)}
+    .brand{font-weight:700}
+    .muted{color:var(--muted);font-size:.92rem}
+    .nav-spacer{flex:1}
+    .icon-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:8px 12px;cursor:pointer}
+    .icon-btn:hover{border-color:#2d3643;background:var(--panel-2)}
+    .hero{padding:28px 0 8px}
+    .title{font-size:clamp(20px,3vw,30px);margin:.2rem 0;font-weight:800}
+    .subtitle{color:var(--muted);margin:0 0 14px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 8px}
+    .search{display:flex;gap:10px;align-items:center;flex:1;min-width:260px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 10px;box-shadow:var(--shadow)}
+    .search input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:1rem}
+    .btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:14px;padding:10px 14px;cursor:pointer;box-shadow:var(--shadow)}
+    .btn:hover{border-color:#2d3643;background:var(--panel-2)}
+    .btn-accent{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#061018;border:none}
+    .btn-accent:hover{filter:brightness(1.05)}
+    .grid{display:grid;gap:16px;margin-top:10px;grid-template-columns:1fr}
+    @media(min-width:740px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1040px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:linear-gradient(180deg,#12151c,#0f1219);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .card:hover{transform:translateY(-2px);border-color:#2d3643;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+    .thumb{height:120px;background:radial-gradient(120px 60px at 70% 20%, rgba(0,168,255,.25), transparent 60%),radial-gradient(120px 60px at 20% 80%, rgba(76,195,255,.20), transparent 60%),linear-gradient(180deg,#0f1219,#161a22)}
+    .body{padding:14px}
+    .kicker{font-size:.75rem;color:#9fb5c9;margin:0 0 6px;text-transform:uppercase;letter-spacing:.12em}
+    .card-title{margin:.1rem 0 .4rem;font-weight:800}
+    .desc{color:var(--muted);font-size:.95rem;min-height:42px;margin:0 0 12px}
+    .meta{display:flex;justify-content:space-between;align-items:center;color:#8ea3ba;font-size:.82rem;margin-bottom:12px}
+    .pill{border:1px solid var(--line);background:rgba(0,168,255,.08);color:#bfe8ff;padding:6px 10px;border-radius:999px}
+    .go{display:block;text-align:center;text-decoration:none;background:var(--panel-2);border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:12px}
+    .go:hover{border-color:#2d3643;background:#1a1f29}
+    footer{color:#8fa3bb;font-size:.85rem;border-top:1px solid var(--line);margin-top:26px;padding:22px 0 30px;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo"></div>
+      <div>
+        <div class="brand">English Notes</div>
+        <div class="muted">Apuntes & ejercicios – estilo limpio</div>
+      </div>
+      <div class="nav-spacer"></div>
+      <button class="icon-btn" id="aboutBtn">Acerca</button>
+    </div>
+  </header>
+
+  <section class="wrap hero">
+    <h1 class="title">Tu biblioteca de inglés</h1>
+    <p class="subtitle">Materiales claros, con una estética moderna y simple.</p>
+    <div class="toolbar">
+      <div class="search">
+        <input id="q" type="search" placeholder="Buscar: pdf, past, infinitive…" />
+        <button class="btn" id="clearBtn">Limpiar</button>
+      </div>
+      <button class="btn-accent" id="howBtn">Cómo agregar material</button>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div id="grid" class="grid"></div>
+    <footer>
+      Hecho con 💙 por Emanuel • Publicado con GitHub Pages
+    </footer>
+  </main>
+
+  <script>
+    const items = [
+      {
+        kicker: "PDF",
+        title: "Unidad 9 — Resumen explicativo",
+        desc: "Versión en PDF explicada como a un joven de 15 años.",
+        url: "Unidad9_summary.pdf",
+        tag: "summary",
+        updated: "2025-09-03"
+      }
+    ];
+
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const clearBtn = document.getElementById('clearBtn');
+    const howBtn = document.getElementById('howBtn');
+    const aboutBtn = document.getElementById('aboutBtn');
+
+    function render(list){
+      grid.innerHTML = "";
+      list.forEach(card => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="thumb"></div>
+          <div class="body">
+            <div class="kicker">${card.kicker}</div>
+            <h3 class="card-title">${card.title}</h3>
+            <p class="desc">${card.desc}</p>
+            <div class="meta">
+              <span class="pill">${card.tag}</span>
+              <span>Actualizado: ${card.updated}</span>
+            </div>
+            <a class="go" href="${card.url}" target="_blank">Abrir</a>
+          </div>`;
+        grid.appendChild(el);
+      });
+    }
+
+    function applyFilter(){
+      const s = q.value.toLowerCase().trim();
+      if(!s){ render(items); return; }
+      const out = items.filter(it =>
+        it.title.toLowerCase().includes(s) ||
+        it.desc.toLowerCase().includes(s) ||
+        (it.tag && it.tag.toLowerCase().includes(s)) ||
+        (it.kicker && it.kicker.toLowerCase().includes(s))
+      );
+      render(out);
+    }
+
+    q.addEventListener('input', applyFilter);
+    clearBtn.addEventListener('click', ()=>{ q.value=''; applyFilter(); });
+
+    howBtn.addEventListener('click', ()=>{
+      alert(`Para agregar material:\n\n1) Sube tu archivo (PDF o HTML) a este mismo repositorio.\n2) Pon la url correcta (ej.: 'archivo.pdf' o 'carpeta/index.html').\n3) Edita el array 'items' en este archivo y añade un objeto.\n4) Guarda cambios y actualiza la página.`);
+    });
+
+    aboutBtn.addEventListener('click', ()=>{
+      alert('English Notes — portal minimalista inspirado en One UI.');
+    });
+
+    render(items);
+  </script>
+</body>
+</html>
